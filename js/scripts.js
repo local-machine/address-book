@@ -82,6 +82,13 @@ function showContact(contactId) {
   $(".email-address").html(contact.emailAddress);
   $(".home-address").html(newAddressSet.homeAddress);
   $(".work-address").html(newAddressSet.workAddress);
+  $(".homeaddy, .workaddy").show();
+  if (!newAddressSet.homeAddress) {
+    $(".homeaddy").hide();
+  }
+  if (!newAddressSet.workAddress) {
+    $(".workaddy").hide();
+  }
   var buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='deleteButton' id=" +  + contact.id + ">Delete</button>");
