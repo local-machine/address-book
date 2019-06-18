@@ -70,13 +70,15 @@ function displayContactDetails(addressBookToDisplay) {
     htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
   });
   contactsList.html(htmlForContactInfo);
+  $("#contacts").hide();
+  $("#contacts").fadeIn(1000);
 };
 
 function showContact(contactId) {
   var contact = addressBook.findContact(contactId);
   var newAddressSet = contact.addressSet;
-  $("#show-contact").show();
-  $(".first-name").html(contact.firstName);
+  $("#show-contact").fadeIn(1000);
+  $(".first-name").text(contact.firstName);
   $(".last-name").html(contact.lastName);
   $(".phone-number").html(contact.phoneNumber);
   $(".email-address").html(contact.emailAddress);
